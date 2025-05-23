@@ -3,6 +3,9 @@
 Build & run with Docker:
    docker-compose up --build -d
 
+## Use below command to run the unit test cases
+docker-compose exec app sh -c "APP_ENV=testing DB_CONNECTION=sqlite DB_DATABASE=:memory: php artisan test --filter=AppointmentServiceTest"
+
 ## below are the API URLs to test
 #1. Register a new user
    curl -X POST http://localhost:8000/api/register
